@@ -25,8 +25,10 @@ for line in data:
 
   allNumbers = sorted(numericNumbers + speltNumbers, key = lambda x: x[0])
 
-  calibrationTotal1 += int(numericNumbers[0][1] + numericNumbers[-1][1])
-  calibrationTotal2 += int(allNumbers[0][1] + allNumbers[-1][1])
+  if len(numericNumbers) > 0:
+    calibrationTotal1 += int(numericNumbers[0][1] + numericNumbers[-1][1])
+  if len(allNumbers) > 0:
+    calibrationTotal2 += int(allNumbers[0][1] + allNumbers[-1][1])
 
-print(calibrationTotal1) # Part 1
-print(calibrationTotal2) # Part 2
+print('Part 1:', calibrationTotal1)
+print('Part 2:', calibrationTotal2)
